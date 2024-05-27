@@ -1,7 +1,7 @@
 const postData = {
     grant_type: 'client_credentials',
     client_id: 'b4d5907d03134b1895bcb5a1694331df',
-    client_secret: '' //${{secrets.SPOTIFY_API_KEY}},
+    client_secret: process.env.SPOTIFY_API_KEY,
     redirect_uri: 'http://192.168.1.17:3000/'
 };
 //let access_token = ''
