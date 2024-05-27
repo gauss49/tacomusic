@@ -1,1 +1,69 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+    <title>Song Recommender</title>
+</head>
+<body>
+<h1 id="header">Song Recommender</h1>
+<p>Choose how you would like to search for more music, then hit search:</p>
+<div>
+    <label for="artistCheck">Artist share link</label>
+    <input type="checkbox" id="artistCheck" name="artistCheck">
+    <input type="text" id="artist" name="artist" size="50">
+</div>
+<div>
+    <label for="artNameCheck">Artist</label>
+    <input type="checkbox" id="artNameCheck" name="artNameCheck">
+    <input type="text" id="art" name="art" size="50">
+    <button type="button" id="addArt" onclick="searchArt()">Find Artist</button>
+    <ol id="artList"></ol>
+</div>
+<div>
+    <label for="popularityCheck">Song popularity</label>
+    <input type="checkbox" id="popularityCheck" name="popularityCheck">
+    <input type="range" min="1" max="100" value="100" id="popularity">
+</div>
+<div>
+    <label for="energyCheck">Song energy</label>
+    <input type="checkbox" id="energyCheck" name="energyCheck">
+    <input type="range" min="0" max="99" value="99" id="energy">
+</div>
+<div>
+    <label for="valenceCheck">Song happiness</label>
+    <input type="checkbox" id="valenceCheck" name="valenceCheck">
+    <input type="range" min="0" max="99" value="99" id="valence">
+</div>
+<div>
+    <label for="tempoCheck">Tempo (BPM)</label>
+    <input type="checkbox" id="tempoCheck" name="tempoCheck">
+    <input type="number" id="tempo">
+</div>
+<div>
+    <label for="quantCheck">Quantity! (Max 100, default 20)</label>
+    <input type="checkBox" id="quantCheck" name="quantCheck">
+    <input type="number" id="quant">
+</div>
+<button type="button" onclick="getRecs()">Submit</button>
+<ol id="recs"></ol>
+<button type="button" id="authButton" onclick="requestAccess()">Connect to Spotify (coming soon)</button>
+<!-- <script>
+    function authorize() {
+        localStorage.setItem('originalPageUrl', window.location.href);
+
+        const clientId = 'b4d5907d03134b1895bcb5a1694331df';
+        const redirectUri = 'http://localhost:3000/callback';
+        const authorizationUrl = 'https://accounts.spotify.com/authorize?client_id='+clientId+'&redirect_uri='+''+'&response_type=code';
+        window.location.href = authorizationUrl;
+    }
+
+    document.getElementById('authButton').addEventListener('click', authorize);
+
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.has('code')) {
+        document.getElementById('header').textContent = 'yes';
+    }
+</script> -->
+<script src="./resources/scripts/main.js"></script>
+</body>
+</html>
